@@ -30,6 +30,7 @@ public class Persona {
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
 	private List<Partecipazione> listaPartecipazioni;
 
+
 	// Costruttori
 	public Persona() {}
 

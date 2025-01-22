@@ -4,6 +4,7 @@ package persist;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "evento")
@@ -28,6 +29,9 @@ public class Evento {
 
 	@Column(name = "numero_massimo_partecipanti")
 	private int numeroMassimoPartecipanti;
+
+	@OneToMany(mappedBy = "evento")
+	private List<Partecipazione> listaEventi;
 
 	@ManyToOne
 	@JoinColumn(name = "location_id") // Nome della colonna FK nella tabella Evento
